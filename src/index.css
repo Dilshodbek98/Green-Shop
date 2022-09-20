@@ -1,0 +1,35 @@
+*, 
+::after,
+::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+  color: #3d3d3d;
+  background-color: #fff;
+}
+
+a{
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+h1,h2{
+  font-weight: 700;
+  color: #3D3D3D;
+}
+
+ul{
+  list-style: none;
+}
+
+p{
+  font-weight: 400;
+  font-size: 16px;
+  color: #727272;
+}
