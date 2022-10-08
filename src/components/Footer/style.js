@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const Section = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `
 
 export const Wrapper = styled.div`
@@ -26,10 +29,14 @@ export const List = styled.ul`
   li {
     margin-bottom: 10px;
     a {
+      color: var(--secondaryColor);
       cursor: pointer;
       :hover {
-        color: #46a358;
+        color: var(--primaryColor);
       }
+    }
+    h2 {
+      color: #46a358;
     }
     div {
       display: flex;

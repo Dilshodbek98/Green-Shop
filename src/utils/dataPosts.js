@@ -7,7 +7,7 @@ import img4 from "../accests/images/postImages/04.png";
 export const data = [
   {
     id: 101,
-    img: <img src={img1} />,
+    img: <img alt="plant" src={img1} />,
     date: "September 12 | I Read in 6 minutes",
     heading: "Cactus & Succulent",
     heading2: "Care Tips",
@@ -15,7 +15,7 @@ export const data = [
   },
   {
     id: 1012,
-    img: <img src={img2} />,
+    img: <img alt="plant" src={img2} />,
     date: "September 13  I Read in 2 minutes",
     heading: "Top 10 Succulents for",
     heading2: "Your Home",
@@ -23,7 +23,7 @@ export const data = [
   },
   {
     id: 103,
-    img: <img src={img3}/>,
+    img: <img alt="plant" src={img3}/>,
     date: "September 14 | I Read in 1 minutes",
     heading: "Best Houseplants",
     heading2: "Room by Room",
@@ -31,7 +31,7 @@ export const data = [
   },
   {
     id: 104,
-    img: <img src={img4} />,
+    img: <img alt="plant" src={img4} />,
     date: "September 15 | I Read in 4 minutes",
     heading: "Cactus & Succulent",
     heading2: "Care Tips",

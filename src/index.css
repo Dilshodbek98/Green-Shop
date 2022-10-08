@@ -6,11 +6,18 @@
   box-sizing: border-box;
 }
 
+:root{
+  --primaryColor: #46A358;
+  --secondaryColor: #3D3D3D;
+  --thirdColor: #727272;
+}
+
 body{
   font-family: 'Inter', sans-serif;
   color: #3d3d3d;
   background-color: #fff;
 }
+
 
 a{
   text-decoration: none;

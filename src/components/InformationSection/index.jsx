@@ -6,12 +6,12 @@ import { Contact, Section, Services, Wrapper } from "./styled";
 import img1 from "../../accests/images/services/group1.png";
 import img2 from "../../accests/images/services/group2.png";
 import img3 from "../../accests/images/services/group3.png";
-import Button from "../Button/button";
 //icons
 import logo from '../../accests/icons/Logo.svg'
 import location from "../../accests/icons/location.svg";
 import message from "../../accests/icons/message.svg";
 import calling from "../../accests/icons/calling.svg";
+import Button from "../Generics/Button";
 
 
 const InformationSection = () => {
@@ -33,9 +33,9 @@ const InformationSection = () => {
               <h3>Would you like to join newsletters?</h3>
               <div className="input">
                 <input type="email" placeholder="enter your email address..." />
-                <button>
-                  <p>Join</p>
-                </button>
+                <Button>
+                  Join
+                </Button>
               </div>
               <p className="text">
                 We usually post offers and challenges in newsletter. We’re your

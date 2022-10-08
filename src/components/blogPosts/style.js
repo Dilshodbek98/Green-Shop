@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 export const Section = styled.div`
-  margin: 138px 0 103px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
 `;
 
 export const Wrapper = styled.div`
@@ -59,6 +62,7 @@ export const Card = styled.div`
     }
     a{
       margin-bottom: 13px;
+      color: var(--secondaryColor);
       :hover{
         color: #46a358;
       }

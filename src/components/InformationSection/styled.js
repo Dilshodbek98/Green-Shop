@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const Section = styled.div``;
+export const Section = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
 
 export const Wrapper = styled.div`
   background-color: #fbfbfb;
@@ -35,6 +39,9 @@ export const Services = styled.div`
         :focus {
           outline: none;
         }
+      }
+      input[type="email"]{
+        margin-bottom: 10px;
       }
       button {
         width: 85px;

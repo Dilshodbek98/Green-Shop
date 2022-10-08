@@ -1,9 +1,9 @@
 import React from "react";
-import { data } from "../../data/dataPosts";
 import { Container } from "../GlobaleContainer/container";
 import { Card, Cards, Section, Wrapper } from "./style";
 
 import rightArrow from "../../accests/icons/arrowRight2.svg";
+import { data } from "../../utils/dataPosts";
 
 const BlogPosts = () => {
   return (
@@ -25,7 +25,7 @@ const BlogPosts = () => {
                     <h2>{item.heading}</h2>
                     <h2 className="h2">{item.heading2}</h2>
                     <p className="title">{item.title}</p>
-                    <a>
+                    <a className="read-more">
                       Read More <img src={rightArrow}/>
                     </a>
                   </div>
