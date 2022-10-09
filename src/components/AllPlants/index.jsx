@@ -129,10 +129,10 @@ const AllPlants = () => {
                       key={item.id}
                       onClick={() => navigate(`/products/${item.id}`)}
                     >
-                      <img src={item.img} alt="" />
+                      <img src={item.img} alt="" height={250} width={250}/>
                       <div className="title">
                         <p>{item.title}</p>
-                        <p className="price">{item.price}</p>
+                        <p className="price">${item.price}</p>
                       </div>
                     </Card>
                   );

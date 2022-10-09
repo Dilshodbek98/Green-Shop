@@ -1,25 +1,41 @@
 import styled from "styled-components";
-export const Main = styled.div`
+import Slider from "react-slick";
+
+const Main = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 50px 0;
-`;
-export const Wrapper = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 70px;
-  @media (max-width: 1440px) {
-    grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 50px;
+  margin-top: 12px;
+
+  .slick-prev:before,
+  .slick-next:before {
+    color: var(--primaryColor);
+    font-size: 30px;
   }
-  @media (max-width: 1200px) {
-    grid-template-columns: 1fr 1fr;
+  .slick-prev {
+    left: -35px;
+  }
+`;
+const SlickSlider = styled(Slider)`
+  background-color: #f5f5f580;
+  width: 100%;
+  .wrapper {
+    width: 100%;
   }
 `;
 
+const Slide = styled.div`
+  margin-top: 30px;
+  padding-left: 30px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+`;
+
+export { Main, SlickSlider, Slide };
+
 export const Card = styled.div`
-cursor: pointer;
   width: 250px;
   height: 310px;
   background-color: #fbfbfb;

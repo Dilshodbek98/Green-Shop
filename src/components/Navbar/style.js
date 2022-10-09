@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { ReactComponent as Cart} from "../../accests/icons/cart.svg";
-import { ReactComponent as Search} from "../../accests/icons/search.svg";
+import { ReactComponent as Cart } from "../../accests/icons/cart.svg";
+import { ReactComponent as Search } from "../../accests/icons/search.svg";
+import { ReactComponent as Delete } from "../../accests/icons/delete.svg";
 import { Modal } from "antd";
 //Navbar
 export const Nav = styled.div`
@@ -86,8 +87,7 @@ export const Navlink = styled(NavLink)`
   color: var(--secondaryColor);
 `;
 
-export const Icon = styled.div`
-`
+export const Icon = styled.div``;
 
 Icon.Cart = styled(Cart)`
   :hover {
@@ -97,7 +97,15 @@ Icon.Cart = styled(Cart)`
   }
 `;
 Icon.Search = styled(Search)`
-cursor: pointer;
+  cursor: pointer;
+  :hover {
+    & path {
+      fill: var(--primaryColor);
+    }
+  }
+`;
+Icon.Delete = styled(Delete)`
+  cursor: pointer;
   :hover {
     & path {
       fill: var(--primaryColor);
@@ -115,6 +123,28 @@ export const ModalAnt = styled(Modal)`
     border-color: gray;
     :hover {
       color: var(--primaryColor);
+    }
+  }
+
+  table {
+    width: 100%;
+    td {
+      text-align: center;
+    }
+    h2{
+      font-weight: 500;
+      line-height: 16px;
+      font-size: 16px;
+      color: var(-secondaryColor);
+    }
+    .product {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .delete{
+      transform: translateY(-5px);
     }
   }
 `;

@@ -19,6 +19,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Card = styled.div`
+cursor: pointer;
   width: 250px;
   height: 310px;
   background-color: #fbfbfb;

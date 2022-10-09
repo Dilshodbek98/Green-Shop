@@ -26,24 +26,31 @@ import { useEffect } from "react";
 
 const Navbar = () => {
   const navigate = useNavigate();
-   const [isModalOpen, setIsModalOpen] = useState(false);
-   const [selectedGoods, setSelectedGoods] = useContext(CartContext)
-   const showModal = () => {
-     setIsModalOpen(true);
-   };
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedGoods, setSelectedGoods] = useContext(CartContext);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
 
-  useEffect(()=> {
-  let res = dataProducts.filter(value => value.count > 1)
-  setSelectedGoods(res)
-  }, [isModalOpen])
+  useEffect(() => {
+    let res = dataProducts.filter((value) => value.count >= 1);
+    setSelectedGoods(res);
+  }, [isModalOpen]);
 
-   const handleOk = () => {
-     setIsModalOpen(false);
-   };
+  const handleOk = () => {
+    setIsModalOpen(false);
+    navigate("/ordering");
+  };
 
-   const handleCancel = () => {
-     setIsModalOpen(false);
-   };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
+  const deleteItem = (id) => {
+    dataProducts[id].count = 0;
+    let res = selectedGoods.filter((vl) => vl.id !== id);
+    setSelectedGoods(res);
+  };
   return (
     <>
       <Nav>
@@ -70,11 +77,11 @@ const Navbar = () => {
             <FunctionsBox>
               <Icon.Search />
               <>
-                <ButtonAnt>
-                  <Icon.Cart onClick={showModal} />
+                <ButtonAnt onClick={showModal}>
+                  <Icon.Cart />
                 </ButtonAnt>
                 <ModalAnt
-                  title="Basic Modal"
+                  title="Shopping Cart"
                   open={isModalOpen}
                   onOk={handleOk}
                   onCancel={handleCancel}
@@ -82,24 +89,49 @@ const Navbar = () => {
                     <ButtonAnt key="back" onClick={handleCancel}>
                       Cancel
                     </ButtonAnt>,
-                    <ButtonAnt
-                      key="submit"
-                      type="primary"
-                      onClick={handleOk}
-                    >
+                    <ButtonAnt key="submit" type="primary" onClick={handleOk}>
                       Buy
                     </ButtonAnt>,
                   ]}
                 >
-                  {selectedGoods.map(value => {
-                    return(
-                      <div key={value.id}>
-                        <i>{value.img}</i>
-                        <i>{value.title}</i>
-                        <i>{value.count}</i>
-                      </div>
-                    )
-                  })}
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Products</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {selectedGoods.map((value) => {
+                        return (
+                          <tr key={value.id}>
+                            <td className="product">
+                              <img src={value.img} width={70} height={70} />
+                              <h2>{value.title}</h2>
+                            </td>
+                            <td>
+                              <p>${value.price}</p>
+                            </td>
+                            <td>
+                              <p>{value.count}</p>
+                            </td>
+                            <td>
+                              <p>
+                                ${Number(value.count) * Number(value.price)}
+                              </p>
+                            </td>
+                            <td className="delete">
+                              <Icon.Delete
+                                onClick={() => deleteItem(value.id)}
+                              />
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
                 </ModalAnt>
               </>
               <Button>

@@ -17,10 +17,10 @@ const ShopComponent = () => {
                 key={item.id}
                 onClick={() => navigate(`/products/${item.id}`)}
               >
-                <img src={item.img} alt="" />
+                <img src={item.img} alt="" width={250} height={250}/>
                 <div className="title">
                   <p>{item.title}</p>
-                  <p className="price">{item.price}</p>
+                  <p className="price">${item.price}</p>
                 </div>
               </Card>
             );

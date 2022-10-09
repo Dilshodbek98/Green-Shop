@@ -1,16 +1,25 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { dataProducts } from "../../utils/products";
 import Button from "../Generics/Button";
 import { Button as ButtonAnt, message } from "antd";
 import { Container } from "../GlobaleContainer/container";
 import { Main, Section } from "./stylde";
+import SmallCarousel from "../SmallCarousel";
+import { useContext } from "react";
+import { CartContext } from "../../context/cart";
 const Products = () => {
+  const navigate = useNavigate();
   const params = useParams();
+  const [selectedGoods, setSelectedGoods] = useContext(CartContext)
   const obj = dataProducts[Number(params?.id)];
-  const [count, setCount] = useState([obj.id]);
-  const [state, setState] = useState(1);
-
+  const [state, setState] = useState(0);
+  const buy = () => {
+    if (state > 0) {
+      setSelectedGoods([...selectedGoods, dataProducts[params.id]]);
+      navigate("/ordering");
+    }
+  };
   const info = () => {
     message.success("Added to your cart");
   };
@@ -18,10 +27,12 @@ const Products = () => {
     <Main>
       <Container>
         <Section>
-          <div>{obj.img}</div>
+          <div>
+            <img src={obj.img} alt="" width={404} height={404} />
+          </div>
           <div className="details">
             <h1>{obj.title}</h1>
-            <h2>{obj.price}</h2>
+            <h2>${obj.price}</h2>
             <div className="divider"></div>
             <p className="short-description-heading">Short Description:</p>
             <p className="short-description">
@@ -60,7 +71,7 @@ const Products = () => {
                 >
                   +
                 </div>
-                <Button>BUY NOW</Button>
+                <Button onClick={() => buy()}>BUY NOW</Button>
                 <ButtonAnt onClick={info}>ADD TO CART</ButtonAnt>
               </div>
             </div>
@@ -113,6 +124,7 @@ const Products = () => {
           </p>
         </Section>
       </Container>
+          <SmallCarousel/>
     </Main>
   );
 };
