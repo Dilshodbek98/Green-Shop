@@ -87,31 +87,31 @@ const AllPlants = () => {
                   className={active === "houseplants" ? "active" : ""}
                   onClick={filter1}
                 >
-                  House Plants(30)
+                  House Plants(37)
                 </p>
                 <p
                   className={active === "potterplants" ? "active" : ""}
                   onClick={filter2}
                 >
-                  Potter Plants(30)
+                  Potter Plants(34)
                 </p>
                 <p
                   className={active === "smallplants" ? "active" : ""}
                   onClick={filter3}
                 >
-                  Small Plants(30)
+                  Small Plants(47)
                 </p>
                 <p
                   className={active === "bigplants" ? "active" : ""}
                   onClick={filter4}
                 >
-                  Big Plants(15)
+                  Big Plants(22)
                 </p>
                 <p
                   className={active === "gardening" ? "active" : ""}
                   onClick={filter5}
                 >
-                  Gardening(30)
+                  Gardening(36)
                 </p>
               </div>
               <div className="banner">

@@ -7,7 +7,16 @@ const Main = styled.div`
   justify-content: center;
   margin-bottom: 50px;
   margin-top: 12px;
-
+  h1 {
+    color: var(--primaryColor);
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 17px;
+    text-align: center;
+  }
+.wrapper {
+  width: 100%;
+}
   .slick-prev:before,
   .slick-next:before {
     color: var(--primaryColor);
@@ -20,14 +29,11 @@ const Main = styled.div`
 const SlickSlider = styled(Slider)`
   background-color: #f5f5f580;
   width: 100%;
-  .wrapper {
-    width: 100%;
-  }
 `;
 
 const Slide = styled.div`
   margin-top: 30px;
-  padding-left: 30px;
+  padding-left: 20px;
   display: flex;
   width: 100%;
   justify-content: space-between;

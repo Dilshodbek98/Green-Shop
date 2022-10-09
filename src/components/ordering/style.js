@@ -3,6 +3,8 @@ import { ReactComponent as Delete } from "../../accests/icons/delete.svg";
 
 const Main = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   justify-content: center;
   .wrapper {

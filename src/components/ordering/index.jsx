@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import { CartContext } from '../../context/cart'
 import { dataProducts } from '../../utils/products'
 import { Container } from '../GlobaleContainer/container'
+import InformationSection from '../InformationSection'
 import SmallCarousel from '../SmallCarousel'
 import { Icon, Main } from './style'
 
@@ -56,6 +57,7 @@ const Ordering = () => {
         </table>
         <SmallCarousel/>
       </Container>
+        <InformationSection/>
     </Main>
   ) :
   <Main>

@@ -123,8 +123,8 @@ const Products = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </Section>
+      <SmallCarousel/>
       </Container>
-          <SmallCarousel/>
     </Main>
   );
 };

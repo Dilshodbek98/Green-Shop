@@ -84,7 +84,7 @@ export const Services = styled.div`
 export const Contact = styled.div`
   background-color: rgba(70, 163, 88, 0.1);
   display: flex;
-  height: 88px;
+  min-height: 88px;
   align-items: center;
   padding-left: 23px;
   flex-wrap: wrap;
@@ -104,7 +104,10 @@ export const Contact = styled.div`
   .location {
     display: flex;
     gap: 12px;
-    margin-right: 53px;
+    margin-right: 63px;
+    p {
+      transform: translateY(5px);
+    }
     @media (max-width: 550px) {
       margin-right: 0;
     }
@@ -112,16 +115,23 @@ export const Contact = styled.div`
   .message {
     display: flex;
     gap: 15px;
-    margin-right: 27px;
+    margin-right: 63px;
+    p {
+      transform: translateY(5px);
+    }
     @media (max-width: 550px) {
       margin-right: 0;
     }
   }
   .phone {
     display: flex;
+    align-items: center;
     gap: 15px;
-    @media (max-width: 550px) {
-      margin-right: 0;
+    p {
+      transform: translateY(5px);
     }
+  }
+  @media (max-width: 550px) {
+    margin-right: 0;
   }
 `;
