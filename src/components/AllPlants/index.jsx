@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { dataProducts } from "../../utils/products";
 import { Container } from "../GlobaleContainer/container";
@@ -15,6 +15,9 @@ const AllPlants = () => {
   const IndexOfFirstItem = IndexOfLastItem - postsPerPage;
   const currentData = data.slice(IndexOfFirstItem, IndexOfLastItem);
 
+  useEffect(()=>{
+    fetch("https://greenshophorizontteam.herokuapp.com/product").then(res => res.json()).then(res => console.log(res));
+  }, [])
   let amountOfPages = [];
   for (let i = 1; i <= Math.ceil(data.length / postsPerPage); i++) {
     amountOfPages.push(i);

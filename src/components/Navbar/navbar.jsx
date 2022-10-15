@@ -10,7 +10,7 @@ import {
   ModalAnt,
 } from "./style";
 import { Outlet, useNavigate } from "react-router-dom";
-import { Button as ButtonAnt } from "antd";
+import { Button as ButtonAnt, Modal } from "antd";
 
 //icons
 import Logo from "../../accests/icons/Logo.svg";
@@ -51,6 +51,7 @@ const Navbar = () => {
     let res = selectedGoods.filter((vl) => vl.id !== id);
     setSelectedGoods(res);
   };
+
   return (
     <>
       <Nav>
@@ -134,7 +135,7 @@ const Navbar = () => {
                   </table>
                 </ModalAnt>
               </>
-              <Button>
+              <Button onClick={() => navigate('/login')}>
                 <img src={logout} alt="" />
                 <a className="login">Log In</a>
               </Button>

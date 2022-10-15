@@ -1,3 +1,6 @@
+import AddProduct from "../components/AddProduct";
+import Admin from "../components/Admin";
+import Login from "../components/Login";
 import Ordering from "../components/ordering";
 import Products from "../components/products";
 import { useUniqueId } from "../hook/useId";
@@ -34,6 +37,30 @@ export const routeData = [
     title: "Ordering",
     path: "/ordering",
     element: <Ordering />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqueId,
+    title: "Login",
+    path: "/login",
+    element: <Login />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqueId,
+    title: "Admin",
+    path: "/admin",
+    element: <Admin />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqueId,
+    title: "AddProduct",
+    path: "/addProduct",
+    element: <AddProduct />,
     private: false,
     hidden: true,
   },
